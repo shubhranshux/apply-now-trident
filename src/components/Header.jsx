@@ -97,7 +97,7 @@ export default function Header() {
         <div className="mx-auto px-6 xl:px-12 flex items-center justify-between">
             
           {/* Logo Lockup */}
-          <a href="/" className="flex items-center gap-3.5 group cursor-pointer text-decoration-none">
+          <a href="https://tat.tekkzy.com" className="flex items-center gap-3.5 group cursor-pointer text-decoration-none">
             <img src={logo} alt="TAT Logo" className="w-12 h-12 md:w-[52px] md:h-[52px] object-contain flex-shrink-0 drop-shadow-sm" />
             <div className="hidden sm:flex flex-col justify-center items-start">
               <div className={"font-serif text-[24px] md:text-[28px] font-black leading-none uppercase transition-colors duration-500 " + (navActive ? "text-[#3E3A36]" : "text-white")} style={{ fontFamily: "'Playfair Display', 'Source Serif 4', serif", letterSpacing: "0.02em" }}>TRIDENT</div>
