@@ -108,10 +108,10 @@ export default function Header() {
 
           {/* Desktop Nav */}
           <nav className="hidden lg:block">
-            <ul className="flex items-center gap-6 list-none m-0 p-0">
+            <ul className="flex items-center gap-8 list-none m-0 p-0">
               {NAV_LINKS.map(item => (
                 <li key={item.label}>
-                  <a href={item.href} className={"nav-link text-[14px] uppercase tracking-[0.14em] cursor-pointer whitespace-nowrap font-extrabold transition-colors duration-500 text-decoration-none " + (navActive ? "text-[#3E3A36] hover:text-[#1B4D8E]" : "text-white/90 hover:text-white")}>
+                  <a href={item.href} className={"nav-link text-[14px] uppercase tracking-[0.08em] cursor-pointer whitespace-nowrap font-semibold transition-colors duration-500 text-decoration-none " + (navActive ? "text-[#3E3A36] hover:text-[#1B4D8E]" : "text-white/90 hover:text-white")}>
                     {item.label}
                   </a>
                 </li>
@@ -121,7 +121,7 @@ export default function Header() {
 
           {/* CTA Elements */}
           <div className="hidden lg:flex items-center gap-5">
-            <a href="https://apply-now.tekkzy.com" className="text-[12px] font-medium px-7 py-3 rounded uppercase whitespace-nowrap text-decoration-none transition-all duration-500 hover:opacity-90" style={{ backgroundColor: '#D3494B', color: '#ffffff' }}>Apply Now</a>
+            <a href="https://apply-now.tekkzy.com" className="text-[13px] font-bold px-6 py-2.5 rounded uppercase tracking-wider whitespace-nowrap text-decoration-none transition-all duration-500 hover:opacity-90 shadow-sm" style={{ backgroundColor: '#C35350', color: '#ffffff' }}>APPLY NOW</a>
           </div>
 
           {/* Mobile Toggle */}

@@ -17,8 +17,8 @@ export default function App() {
         }
 
         html { scroll-behavior: smooth; }
-        body { font-family: 'DM Sans', sans-serif; background-color: var(--bg-light); color: var(--text-dark); font-weight: 700; font-size: 19px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
-        .serif { font-family: 'Playfair Display', serif; font-weight: 900; line-height: 1.08; letter-spacing: -0.02em; }
+        body { font-family: 'Inter', 'DM Sans', sans-serif; background-color: var(--bg-light); color: var(--text-dark); font-weight: 400; font-size: 18px; line-height: 1.7; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        .serif { font-family: 'Source Serif 4', Georgia, serif; font-weight: 700; line-height: 1.08; letter-spacing: -0.025em; }
         h1, h2, h3 { font-weight: 900; letter-spacing: -0.02em; }
         p { font-size: 19px; line-height: 1.75; font-weight: 500; }
         
