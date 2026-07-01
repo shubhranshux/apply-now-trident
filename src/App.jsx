@@ -3,6 +3,30 @@ import ApplyPage from "./pages/apply/index.jsx";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
+// Import all pages
+import AICTEDisclosurePage from "./pages/AICTEDisclosurePage";
+import AboutPage from "./pages/AboutPage";
+import AlumniPage from "./pages/AlumniPage";
+import AntiRaggingPage from "./pages/AntiRaggingPage";
+import BPUTAffiliationPage from "./pages/BPUTAffiliationPage";
+import CareerPage from "./pages/CareerPage";
+import CiscoThingQbatorPage from "./pages/CiscoThingQbatorPage";
+import DisclaimerPage from "./pages/DisclaimerPage";
+import FinancialAuditsPage from "./pages/FinancialAuditsPage";
+import GrievancePage from "./pages/GrievancePage";
+import ICCPage from "./pages/ICCPage";
+import IQACPage from "./pages/IQACPage";
+import InformationBrochurePage from "./pages/InformationBrochurePage";
+import LibraryPage from "./pages/LibraryPage";
+import NAACPage from "./pages/NAACPage";
+import NBAPage from "./pages/NBAPage";
+import NIRFPage from "./pages/NIRFPage";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
+import SIROPage from "./pages/SIROPage";
+import StudentClubsPage from "./pages/StudentClubsPage";
+import TermsOfUsePage from "./pages/TermsOfUsePage";
+import TestimonialsPage from "./pages/TestimonialsPage";
+
 export default function App() {
   return (
     <div className="text-[#3E3A36] bg-[#EFE7DF] font-sans" style={{ overflowX: "clip" }}>
@@ -125,6 +149,30 @@ export default function App() {
       <Routes>
         <Route path="/" element={<ApplyPage />} />
         <Route path="/apply" element={<ApplyPage />} />
+        
+        <Route path="/aicte-disclosure" element={<AICTEDisclosurePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/alumni" element={<AlumniPage />} />
+        <Route path="/anti-ragging" element={<AntiRaggingPage />} />
+        <Route path="/bput-affiliation" element={<BPUTAffiliationPage />} />
+        <Route path="/career" element={<CareerPage />} />
+        <Route path="/cisco-thingqbator" element={<CiscoThingQbatorPage />} />
+        <Route path="/disclaimer" element={<DisclaimerPage />} />
+        <Route path="/financial-audits" element={<FinancialAuditsPage />} />
+        <Route path="/grievance" element={<GrievancePage />} />
+        <Route path="/icc" element={<ICCPage />} />
+        <Route path="/iqac" element={<IQACPage />} />
+        <Route path="/information-brochure" element={<InformationBrochurePage />} />
+        <Route path="/library" element={<LibraryPage />} />
+        <Route path="/naac" element={<NAACPage />} />
+        <Route path="/nba" element={<NBAPage />} />
+        <Route path="/nirf" element={<NIRFPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+        <Route path="/siro" element={<SIROPage />} />
+        <Route path="/student-clubs" element={<StudentClubsPage />} />
+        <Route path="/terms-of-use" element={<TermsOfUsePage />} />
+        <Route path="/testimonials" element={<TestimonialsPage />} />
+        
         <Route path="*" element={<ApplyPage />} />
       </Routes>
       <Footer />

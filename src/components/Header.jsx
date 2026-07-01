@@ -6,9 +6,6 @@ import logo from "../assets/logo.png";
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [hovered, setHovered] = useState(false);
-  
-  const navActive = scrolled || hovered || mobileOpen;
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 50);
@@ -17,12 +14,12 @@ export default function Header() {
   }, []);
 
   const mandatoryLinks = [
-    { label: "AICTE Approvals", href: "#", icon: CheckCircle, color: "text-emerald-600", bg: "bg-emerald-50", hover: "group-hover/link:bg-emerald-600" },
-    { label: "BPUT Affiliation", href: "#", icon: Award, color: "text-blue-600", bg: "bg-blue-50", hover: "group-hover/link:bg-blue-600" },
-    { label: "NAAC Certificate", href: "#", icon: ShieldCheck, color: "text-purple-600", bg: "bg-purple-50", hover: "group-hover/link:bg-purple-600" },
-    { label: "NBA Documents", href: "#", icon: FileSpreadsheet, color: "text-amber-600", bg: "bg-amber-50", hover: "group-hover/link:bg-amber-600" },
-    { label: "Financial Audits", href: "#", icon: BookOpen, color: "text-indigo-600", bg: "bg-indigo-50", hover: "group-hover/link:bg-indigo-600" },
-    { label: "Anti-Ragging Policy", href: "#", icon: ShieldAlert, color: "text-rose-600", bg: "bg-rose-50", hover: "group-hover/link:bg-rose-600" }
+    { label: "AICTE Approvals", href: "/aicte-disclosure", icon: CheckCircle, color: "text-emerald-600", bg: "bg-emerald-50", hover: "group-hover/link:bg-emerald-600" },
+    { label: "BPUT Affiliation", href: "/bput-affiliation", icon: Award, color: "text-blue-600", bg: "bg-blue-50", hover: "group-hover/link:bg-blue-600" },
+    { label: "NAAC Certificate", href: "/naac", icon: ShieldCheck, color: "text-purple-600", bg: "bg-purple-50", hover: "group-hover/link:bg-purple-600" },
+    { label: "NBA Documents", href: "/nba", icon: FileSpreadsheet, color: "text-amber-600", bg: "bg-amber-50", hover: "group-hover/link:bg-amber-600" },
+    { label: "Financial Audits", href: "/financial-audits", icon: BookOpen, color: "text-indigo-600", bg: "bg-indigo-50", hover: "group-hover/link:bg-indigo-600" },
+    { label: "Anti-Ragging Policy", href: "/anti-ragging", icon: ShieldAlert, color: "text-rose-600", bg: "bg-rose-50", hover: "group-hover/link:bg-rose-600" }
   ];
 
   return (
@@ -82,7 +79,7 @@ export default function Header() {
             </div>
 
             {/* Alumni Portal */}
-            <a href="#" className="flex items-center gap-1.5 text-[10px] font-medium text-[#E8BD63] uppercase tracking-widest hover:text-[#F0D080] transition-colors whitespace-nowrap">
+            <a href="/alumni" className="flex items-center gap-1.5 text-[10px] font-medium text-[#E8BD63] uppercase tracking-widest hover:text-[#F0D080] transition-colors whitespace-nowrap">
               <Users size={11}/> Alumni
             </a>
           </div>
@@ -90,9 +87,7 @@ export default function Header() {
       </div>
 
       <header 
-        className={"relative transition-all duration-500 " + (navActive ? "bg-white shadow-[0_4px_20px_-4px_rgba(15,23,42,0.12)] py-3" : "bg-transparent py-5")}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
+        className={"relative transition-all duration-500 bg-white " + (scrolled ? "shadow-[0_4px_20px_-4px_rgba(15,23,42,0.12)] py-3" : "py-5")}
       >
         <div className="mx-auto px-6 xl:px-12 flex items-center justify-between">
             
@@ -100,9 +95,9 @@ export default function Header() {
           <a href="https://tat.tekkzy.com" className="flex items-center gap-3.5 group cursor-pointer text-decoration-none">
             <img src={logo} alt="TAT Logo" className="w-12 h-12 md:w-[52px] md:h-[52px] object-contain flex-shrink-0 drop-shadow-sm" />
             <div className="hidden sm:flex flex-col justify-center items-start">
-              <div className={"font-serif text-[24px] md:text-[28px] font-black leading-none uppercase transition-colors duration-500 " + (navActive ? "text-[#3E3A36]" : "text-white")} style={{ fontFamily: "'Playfair Display', 'Source Serif 4', serif", letterSpacing: "0.02em" }}>TRIDENT</div>
-              <div className={"w-full h-[1px] my-[4px] transition-all duration-500 " + (navActive ? "bg-[#3E3A36]/30" : "bg-white/40")}></div>
-              <div className={"font-sans text-[9px] md:text-[10.5px] font-bold tracking-[0.25em] uppercase leading-none transition-colors duration-500 " + (navActive ? "text-[#3E3A36]/80" : "text-white/90")}>ACADEMY OF TECHNOLOGY</div>
+              <div className="font-serif text-[24px] md:text-[28px] font-black leading-none uppercase transition-colors duration-500 text-[#3E3A36]" style={{ fontFamily: "'Playfair Display', 'Source Serif 4', serif", letterSpacing: "0.02em" }}>TRIDENT</div>
+              <div className="w-full h-[1px] my-[4px] transition-all duration-500 bg-[#3E3A36]/30"></div>
+              <div className="font-sans text-[9px] md:text-[10.5px] font-bold tracking-[0.25em] uppercase leading-none transition-colors duration-500 text-[#3E3A36]/80">ACADEMY OF TECHNOLOGY</div>
             </div>
           </a>
 
@@ -111,7 +106,7 @@ export default function Header() {
             <ul className="flex items-center gap-8 list-none m-0 p-0">
               {NAV_LINKS.map(item => (
                 <li key={item.label}>
-                  <a href={item.href} className={"nav-link text-[14px] uppercase tracking-[0.08em] cursor-pointer whitespace-nowrap font-semibold transition-colors duration-500 text-decoration-none " + (navActive ? "text-[#3E3A36] hover:text-[#1B4D8E]" : "text-white/90 hover:text-white")}>
+                  <a href={item.href} className="nav-link text-[14px] uppercase tracking-[0.08em] cursor-pointer whitespace-nowrap font-semibold transition-colors duration-500 text-decoration-none text-[#3E3A36] hover:text-[#1B4D8E]">
                     {item.label}
                   </a>
                 </li>
@@ -126,7 +121,7 @@ export default function Header() {
 
           {/* Mobile Toggle */}
           <button 
-            className={"lg:hidden p-2 rounded-lg transition-colors active:scale-95 z-50 relative " + (navActive ? "text-primary bg-soft hover:bg-primary/10" : "text-white bg-white/10 hover:bg-white/20")}
+            className="lg:hidden p-2 rounded-lg transition-colors active:scale-95 z-50 relative text-primary bg-soft hover:bg-primary/10"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle Menu"
           >
